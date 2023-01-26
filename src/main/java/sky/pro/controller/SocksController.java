@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import sky.pro.dto.SocksDto;
 import sky.pro.service.SocksService;
 import io.swagger.v3.oas.annotations.*
@@ -21,7 +20,7 @@ public class SocksController {
     private final SocksService socksService;
     /**
      * Create new ads<br>
-     * Use method of service {@link AdsService#createAds(CreateAdsDto, MultipartFile[])}
+     * Use method of service {@link SocksService#addSocks(SocksDto)}
      *
      * @return Created ads
      */
@@ -32,7 +31,7 @@ public class SocksController {
                     description = "Income of socks is successful",
                     content = {@Content(
                             mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            schema = @Schema(implementation = AdsDto.class)
+                            schema = @Schema(implementation = SocksDto.class)
                     )}
             ),
             @ApiResponse(
