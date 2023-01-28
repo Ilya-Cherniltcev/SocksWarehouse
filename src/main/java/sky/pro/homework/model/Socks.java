@@ -1,4 +1,4 @@
-package sky.pro.model;
+package sky.pro.homework.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,23 +7,32 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@Table(name = "Socks")
+@NoArgsConstructor
+@Table(name = "socks")
 public class Socks {
     @Id
-    @GeneratedValue
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     // color of socks
     private String color;
     // percentage of cotton content in socks (%)
+    @Column(name = "cotton_part")
     private int cottonPart;
     private int quantity;
+
+//    Socks (String color, int cottonPart, int quantity){
+//        this.color = color.toLowerCase();
+//        this.cottonPart = cottonPart;
+//        this.quantity = quantity;
+//    }
 
     @Override
     public boolean equals(Object o){
