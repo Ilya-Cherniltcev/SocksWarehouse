@@ -1,10 +1,10 @@
-package sky.pro.dto;
+package sky.pro.homework.dto;
 
 import lombok.Data;
 
 @Data
 public class SocksDto {
-    private long id;
+   // private long id;
     // color of socks
     private String color;
     // percentage of cotton content in socks (%)
