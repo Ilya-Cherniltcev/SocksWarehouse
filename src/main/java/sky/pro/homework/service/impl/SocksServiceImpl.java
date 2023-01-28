@@ -22,6 +22,10 @@ public class SocksServiceImpl implements SocksService {
     private final SocksRepository socksRepository;
     private final SocksMapper mapper;
 
+    /**
+     * Find needed socks. And if they exist add them to DB else create new {@link Socks}
+     * @param socksDto After mapping work with it (check, add, create)
+     */
     @Override
     public SocksDto addSocks(SocksDto socksDto) {
         Socks socks = mapper.toSocks(socksDto);
@@ -45,6 +49,12 @@ public class SocksServiceImpl implements SocksService {
         return mapper.toDto(updatedSocks);
     }
 
+    /**
+     * Remove finding socks or decrease its quantity if enough {@link Socks}
+     * @param socksDto After mapping work with it (check, remove)
+     * @throws WrongRequestParametersException if we can't find socks or quantity is wrong send this Exception
+     * @throws SomeThingWrongException Some errors if DB hasn't access
+     */
     @Override
     public SocksDto removeSocks(SocksDto socksDto) {
         Socks socks = mapper.toSocks(socksDto);
@@ -79,21 +89,28 @@ public class SocksServiceImpl implements SocksService {
         return mapper.toDto(updatedSocks);
     }
 
+    /**
+     * Get sum of sock's quantity with request {@link Socks}
+     * @param color The color of socks in request
+     * @param operation Operation in request {@link EnumOperations}
+     * @param cottonPart How much cotton consist in socks (in percents)
+     * @throws WrongRequestParametersException if we can't find socks or quantity is wrong send this Exception
+     */
     @Override
     public Integer getSocks(String color, EnumOperations operation, int cottonPart) {
         List<Socks> socksList = new ArrayList<>();
         log.info("try to add to list socks with same color and cottonPart..");
         try {
             switch (operation) {
-                case MORE_THAN:
+                case moreThan:
                     socksList = socksRepository
                             .findAllByColorIgnoreCaseAndCottonPartGreaterThan(color, cottonPart);
                     break;
-                case LESS_THAN:
+                case lessThan:
                     socksList = socksRepository
                             .findAllByColorIgnoreCaseAndCottonPartLessThan(color, cottonPart);
                     break;
-                case EQUAL:
+                case equal:
                     socksList = socksRepository
                             .findAllByColorIgnoreCaseAndCottonPart(color, cottonPart);
                     break;
