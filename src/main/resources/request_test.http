@@ -1,1 +1,1 @@
-http://localhost:8080/api/socks/income/
+http://localhost:8080/api/socks?color=red&operation=moreThan&cottonPart=54

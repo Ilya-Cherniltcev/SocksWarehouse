@@ -1,9 +1,9 @@
 package sky.pro.homework.model;
 
 public enum EnumOperations {
-    MORE_THAN ("moreThan"),
-    LESS_THAN ("lessThan"),
-    EQUAL ("equal");
+    moreThan ("moreThan"),
+    lessThan ("lessThan"),
+    equal ("equal");
 
     private final String operation;
 
