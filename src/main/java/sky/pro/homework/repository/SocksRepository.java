@@ -11,7 +11,6 @@ import java.util.Optional;
 @Repository
 public interface SocksRepository extends JpaRepository<Socks, Long> {
     Optional<Socks> findByColorIgnoreCaseAndCottonPart(String color, int cottonPart);
-
     List<Socks> findAllByColorIgnoreCaseAndCottonPartGreaterThan(String color, int cottonPart);
     List<Socks> findAllByColorIgnoreCaseAndCottonPartLessThan(String color, int cottonPart);
     List<Socks> findAllByColorIgnoreCaseAndCottonPart(String color, int cottonPart);

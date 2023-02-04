@@ -28,12 +28,6 @@ public class Socks {
     private int cottonPart;
     private int quantity;
 
-//    Socks (String color, int cottonPart, int quantity){
-//        this.color = color.toLowerCase();
-//        this.cottonPart = cottonPart;
-//        this.quantity = quantity;
-//    }
-
     @Override
     public boolean equals(Object o){
         if (this == o)  return true;
