@@ -59,6 +59,6 @@
 
 ***
 
-### Запуск приложения через Swagger ###
+### Запуск приложения через Swagger: ###
 
 http://localhost:8080/swagger-ui/index.html
