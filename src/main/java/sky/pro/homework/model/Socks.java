@@ -16,6 +16,7 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @Table(name = "socks")
+
 public class Socks {
     @Id
     @NotNull

@@ -14,5 +14,4 @@ public interface SocksRepository extends JpaRepository<Socks, Long> {
     List<Socks> findAllByColorIgnoreCaseAndCottonPartGreaterThan(String color, int cottonPart);
     List<Socks> findAllByColorIgnoreCaseAndCottonPartLessThan(String color, int cottonPart);
     List<Socks> findAllByColorIgnoreCaseAndCottonPart(String color, int cottonPart);
-
 }

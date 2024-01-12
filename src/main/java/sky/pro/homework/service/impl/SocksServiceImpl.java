@@ -14,7 +14,6 @@ import sky.pro.homework.service.SocksService;
 
 import java.util.ArrayList;
 import java.util.List;
-
 @Slf4j
 @Service
 @RequiredArgsConstructor

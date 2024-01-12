@@ -91,8 +91,6 @@ public class SocksController {
         return new ResponseEntity<>(socksService.removeSocks(socksDto), HttpStatus.OK);
     }
 
-
-
     /**
      * Return total quantity of socks
      * Use method of service {@link SocksService#getSocks(String, EnumOperations, int)}
@@ -127,5 +125,4 @@ public class SocksController {
         }
         return new ResponseEntity<>(socksService.getSocks(color, operation, cottonPart), HttpStatus.OK);
     }
-
 }

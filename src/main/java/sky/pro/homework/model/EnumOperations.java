@@ -10,7 +10,6 @@ public enum EnumOperations {
     EnumOperations(String operation) {
         this.operation = operation;
     }
-
     public String getOperation() {
         return operation;
     }

@@ -5,7 +5,6 @@ import org.mapstruct.Mapping;
 import org.springframework.stereotype.Component;
 import sky.pro.homework.dto.SocksDto;
 import sky.pro.homework.model.Socks;
-
 @Component
 @Mapper(componentModel = "spring")
 public interface SocksMapper {

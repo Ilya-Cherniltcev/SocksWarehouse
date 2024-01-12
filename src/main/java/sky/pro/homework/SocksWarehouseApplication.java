@@ -11,5 +11,4 @@ public class SocksWarehouseApplication {
     public static void main(String[] args) {
         SpringApplication.run(SocksWarehouseApplication.class, args);
     }
-
 }
